@@ -1,0 +1,46 @@
+---
+import { socialIcons } from "../consts";
+import { Icon } from "astro-icon/components";
+---
+
+
+<div class="text-center bg-base-200 md:p-2 lg:p-3 gap-4 rounded-lg">
+  {
+    socialIcons.map((icon) => (
+      <a
+        href={icon.href}
+        target="_blank"
+        class="text-center rounded-[15px] inline-block m-[0_5px] leading-[45px] w-[45px] text-3xl hover:scale-110 hover:rotate-6 transition-scale transition-color duration-200"
+        aria-label={icon.ariaLabel}
+        title={icon.title}
+      >
+        <Icon name={icon.svg} />
+      </a>
+    ))
+  }
+</div>
+
+
+<style>
+  div {
+    contain: content;
+  }
+
+  .menu-item {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  details[open] ul {
+    animation: slideIn 0.3s ease-out;
+  }
+</style>

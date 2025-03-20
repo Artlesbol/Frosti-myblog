@@ -9,28 +9,68 @@ import Success from "../components/mdx/Success.astro";
 import Warning from "../components/mdx/Warning.astro";
 import TimeLine from "../components/mdx/TimeLine.astro";
 import LinkCard from "../components/mdx/LinkCard.astro";
+import ConnectionCard from "../components/ConnectionCard.astro";
 
 <BaseLayout title="About">
   <BaseCard title="About">
-# About Frosti
 
----
+    # 关于这个博客
 
-## Brief introduction
+    ---
 
-Frosti is a static blog template created by EveSunMaple using Astro, designed to replace bloated Hexo. The author is only a high school student, and there are many imperfections in this template that need to be modified. If you are interested, please visit the Github repository.
+    之前一直没有认真写博客，这次心血来潮又搞了一次博客。
 
-## TimeLine
+    以后大概会更新一些技术文章，或许也会写一些生活感悟、读书笔记之类的。
+
+    这次前端就花了挺长时间的，希望我能坚持下去吧。
+
+    ## 时间轴
+
+    这是这个博客的时间轴，大事只有博客建站。因为中间我都断更了（（（
 
     <TimeLine
+    items={[
+    { year: "2023-12-21", event: "第一次使用Hugo搭建博客" },
+    { year: "2023-12-28", event: "写下第一篇博客" },
+    { year: "2023-12-29", event: "断更🥀🥀" },
+    { year: "2025-03-21", event: "用Astro代替Hugo，博客重新开张💕" }
+    ]}
+    />
 
-items={[
-{ year: "2023-12-21", event: "第一次使用Hugo搭建博客" },
-{ year: "2023-12-28", event: "写下第一篇博客" },
-{ year: "2023-12-29", event: "断更" },
-{ year: "2025-3-21", event: "用Astro代替Hugo，博客重新开张" }
-]}
-/>
+    # 关于主题
+
+    ---
+
+    主题是基于 [Frosti](https://github.com/EveSunMaple/Frosti) 修改的，原主题的 bug 其实还挺多的，前前后后改了好多。
+
+    这里有一些主要的修改或者补丁：
+
+    - 去掉博客的大分类，统一侧边栏逻辑
+    - 缩小了页脚 copyright 的 # 符号
+    - 减小代码块复制按钮调样式，优化代码块头部高度，看起来更协调了
+    - 修复特定比例屏幕下，侧边工具框布局抽搐的 bug
+    - 修复 tag 和 category 动效穿模问题
+    - 减小标题大小，让页面呈现更多内容
+    - 去掉数学公式的滚动条，让数学公式更美观
+    - 去掉 tag 和 category 的高亮，避免误会为可点击
+    - 修复了所有图片可以被选取的 bug
+
+    还有一点点没做完，但是已经着急上线博客了，之后应该会补上：
+
+    - (To Do) 解析标题前方的编号并高亮，没有编号则根据h标签创建
+    - (To Do) 列表缩进太多了，看起来不太好看
+
+    <div class="md:hidden">
+    # 联系我
+
+    ---
+
+    可以用这些方式联系我⬇️
+    <ConnectionCard></ConnectionCard>
+
+    也可以直接在博客下面留言，如果我看到了，我会回复的🥰
+
+    </div>
 
   </BaseCard>
 </BaseLayout>

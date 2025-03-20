@@ -7,7 +7,7 @@
   src: url('/fonts/LXGWWenKai-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-  // unicode-range: U+4E00-9FFF; /* 仅应用于中文字符 */
+  /* // unicode-range: U+4E00-9FFF; 仅应用于中文字符 */
 }
 
 
@@ -22,7 +22,7 @@ a {
 }
 
 .katex-display {
-  // overflow-x: auto;
+  /* // overflow-x: auto; */
   @apply overflow-hidden !important;
   /* 覆盖原有 overflow-x: auto */
   /* 强制公式内容适应容器宽度 */
@@ -418,10 +418,10 @@ thead th {
 
 .copy-btn {
   position: relative;
-  top: 0; // 上下位置
-  right: 0; // 左右位置
-  z-index: 10; // 元素层级
-  padding: 0 0.3rem 0 0.3rem; // padding: top 0, right 0.3rem, bottom 0, left 0.3rem
+  top: 0; 
+  right: 0; 
+  z-index: 10; 
+  padding: 0 0.3rem 0 0.3rem; 
 }
 
 .btn-category {
