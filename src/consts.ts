@@ -32,37 +32,44 @@ export const CODE_THEME = {
 
 // Menu items for navigation
 export const menuItems = [
-  { id: "home", text: "主页", href: "/", svg: "material-symbols:home-outline-rounded", target: "_self" }, // Home page
-  
+  {
+    id: "home",
+    text: "主页",
+    href: "/",
+    svg: "material-symbols:home-outline-rounded",
+    target: "_self",
+    showOnSmallScreenOnly: false,
+  }, // Home page
   {
     id: "blog",
     text: "博客",
     href: "/blog",
     svg: "material-symbols:book-2-outline-rounded",
     target: "_self",
-    subItems: [
-      {
-        id: "all",
-        text: "All blogs",
-        href: "/blog",
-        svg: "material-symbols:ink-pen-outline-rounded",
-        target: "_self",
-      }, // All blog
-      {
-        id: "tech",
-        text: "Tech blogs",
-        href: "/blog/categories/tech",
-        svg: "material-symbols:deployed-code-outline",
-        target: "_self",
-      }, // Technology category
-      {
-        id: "life",
-        text: "Life blogs",
-        href: "/blog/categories/life",
-        svg: "material-symbols:earthquake-rounded",
-        target: "_self",
-      }, // Life category
-    ],
+    showOnSmallScreenOnly: false,
+    // subItems: [
+    //   {
+    //     id: "all",
+    //     text: "All blogs",
+    //     href: "/blog",
+    //     svg: "material-symbols:ink-pen-outline-rounded",
+    //     target: "_self",
+    //   }, // All blog
+    //   {
+    //     id: "tech",
+    //     text: "Tech blogs",
+    //     href: "/blog/categories/tech",
+    //     svg: "material-symbols:deployed-code-outline",
+    //     target: "_self",
+    //   }, // Technology category
+    //   {
+    //     id: "life",
+    //     text: "Life blogs",
+    //     href: "/blog/categories/life",
+    //     svg: "material-symbols:earthquake-rounded",
+    //     target: "_self",
+    //   }, // Life category
+    // ],
   }, // Blog page with sub-items
   {
     id: "category",
@@ -70,6 +77,7 @@ export const menuItems = [
     href: "/category",
     svg: "material-symbols:inbox",
     target: "_self",
+    showOnSmallScreenOnly: true,
   }, // Projects page
   {
     id: "project",
@@ -77,6 +85,7 @@ export const menuItems = [
     href: "/project",
     svg: "material-symbols:code-blocks-outline",
     target: "_self",
+    showOnSmallScreenOnly: false,
   }, // Projects page
   {
     id: "friend",
@@ -84,6 +93,7 @@ export const menuItems = [
     href: "/friend",
     svg: "material-symbols:supervisor-account-outline-rounded",
     target: "_self",
+    showOnSmallScreenOnly: false,
   }, // Friends page
   // {
   //   id: "contact",
@@ -92,7 +102,14 @@ export const menuItems = [
   //   target: "_blank", // Open in a new tab
   //   svg: "material-symbols:attach-email-outline-rounded",
   // },
-  { id: "about", text: "关于", href: "/about", svg: "material-symbols:info-outline-rounded", target: "_self" }, // About page
+  {
+    id: "about",
+    text: "关于",
+    href: "/about",
+    svg: "material-symbols:info-outline-rounded",
+    target: "_self",
+    showOnSmallScreenOnly: false,
+  }, // About page
 ];
 
 // Social media and contact icons

@@ -53,7 +53,7 @@ import type { MenuItem } from "../types";
           ) : (
             <a
               tabindex="0"
-              class="flex justify-center lg:justify-start items-center text-center text-xl md:text-3xl lg:text-xl font-bold p-4 hover:bg-base-200 rounded-lg transition-scale transition-color"
+              class={`flex justify-center lg:justify-start items-center text-center text-xl md:text-3xl lg:text-xl font-bold p-4 hover:bg-base-200 rounded-lg transition-scale transition-color ${item.showOnSmallScreenOnly ? 'lg:hidden md:hidden' : ''}`}
               id={item.id}
               title={item.id}
               href={item.href}
