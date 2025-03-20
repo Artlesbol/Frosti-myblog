@@ -1,0 +1,51 @@
+---
+import EnvelopeCardLite from "../components/EnvelopeCardLite.astro";
+import CardVertical from "../layouts/CardVertical.astro";
+import { getCollection } from "astro:content";
+
+// 获取所有博客文章并按发布日期排序
+const allPosts = await getCollection("blog");
+allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// 获取前5篇最新文章
+const recentPosts = allPosts.slice(0, 5);
+
+// 获取文章统计信息（阅读时间、字数）
+const postsWithStats = await Promise.all(
+    recentPosts.map(async (post) => {
+        const { remarkPluginFrontmatter } = await post.render();
+        return {
+            ...post,
+            remarkPluginFrontmatter: {
+                readingTime: remarkPluginFrontmatter.readingTime,
+                totalCharCount: remarkPluginFrontmatter.totalCharCount,
+            },
+        };
+    }),
+);
+---
+
+<!-- <div class="flex flex-col gap-4 p-6 bg-base-200"> -->
+<CardVertical>
+    <h2 class="p-0 mb-4 mt-0">近期文章</h2>
+    <div class="flex flex-col gap-4">
+    {
+        postsWithStats.map((post) => (
+            <EnvelopeCardLite
+                title={post.data.title}
+                image={post.data.image}
+                desc={post.data.description}
+                url={`/blog/${post.slug}`}
+                pubDate={post.data.pubDate}
+                badge={post.data.badge}
+                categories={post.data.categories}
+                tags={post.data.tags}
+                word={post.remarkPluginFrontmatter.totalCharCount}
+                time={post.remarkPluginFrontmatter.readingTime}
+                target="_self"
+            />
+        ))
+    }
+    </div>
+</CardVertical>
+<!-- </div> -->

@@ -18,7 +18,7 @@ export const USER_SITE = "http://172.27.149.129:4321/"; // At the same time, thi
 export const USER_AVATAR = "/profile.jpg";
 
 // Server and transition settings
-export const SERVER_URL = "https://demo.saroprock.com";
+export const SERVER_URL = "https://waline-green-iota.vercel.app";
 
 // Theme settings
 export const DAISYUI_THEME = {

@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseCard from "../components/BaseCard.astro";
+import RecentPost from "../components/RecentPost.astro";
+---
+
+<BaseLayout title="Home">
+  <BaseCard title="Home">
+    <div class="flex">
+      <div class="p-6">
+        <h1 id="h1" class="text-6xl">😽😼😼😻😹😸😺</h1>
+        <br />
+
+        <div class="leading-10 fade-in-up text-xl">
+          <p>Hi! 欢迎访问 Artlesbol 的博客。</p>
+          <p>关于我。可能是一个算是开发者的研究生？方向大概是 HPC。</p>
+          <p>梦想是成为自由职业者。</p>
+          <p>我的爱好是猫猫，目标是养一只猫猫。</p>
+          <p class="md:block hidden">⬅️ 博客、项目还有朋友们都在左边</p>
+          <p class="md:block hidden">↙️ 你也可以在这些地方联系到我</p>
+          <p class="md:hidden">↖️ 博客、项目还有朋友们都在菜单里</p>
+          <p class="md:hidden">
+            你也可以在<a href="/about">关于</a>里找到我的联系方式
+          </p>
+          <p>总之欢迎🎉</p>
+        </div>
+      </div>
+    </div>
+  </BaseCard>
+
+  <RecentPost />
+</BaseLayout>
