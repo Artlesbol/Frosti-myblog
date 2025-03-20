@@ -20,7 +20,7 @@ const { title, image, url} = Astro.props;
     <!-- Image Section -->
     {
       image && (
-        <a href={url} class="relative lg:w-1/5 aspect-video lg:aspect-video overflow-hidden lg:order-2 order-1 lg:block hidden">
+        <a href={url} class="relative lg:w-1/5 aspect-video lg:aspect-video overflow-hidden lg:order-2 order-1 lg:block hidden pointer-events-none">
           <Image
             src={image}
             alt={title}
