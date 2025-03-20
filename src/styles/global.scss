@@ -2,7 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'LXGWWenKai';
+  src: url('/fonts/LXGWWenKai-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  // unicode-range: U+4E00-9FFF; /* 仅应用于中文字符 */
+}
+
+
 html {
+  font-family: 'LXGWWenKai', sans-serif;
   @apply scroll-smooth;
 }
 
@@ -12,8 +22,15 @@ a {
 }
 
 .katex-display {
-  overflow-x: auto;
+  // overflow-x: auto;
+  @apply overflow-hidden !important;
+  /* 覆盖原有 overflow-x: auto */
+  /* 强制公式内容适应容器宽度 */
+  max-width: 100%;
+  /* 可选：调整公式字体大小以适应窄容器 */
+  font-size: 0.9em;
 }
+
 
 .medium-zoom-image--opened {
   @apply rounded-xl shadow-xl;
@@ -190,23 +207,23 @@ h6 {
 }
 
 h1 {
-  @apply text-5xl leading-tight pt-7;
+  @apply text-4xl leading-tight pt-6;
 }
 
 h2 {
-  @apply text-4xl leading-snug pt-6;
+  @apply text-3xl leading-snug pt-5;
 }
 
 h3 {
-  @apply text-3xl leading-normal pt-5;
+  @apply text-2xl leading-normal pt-4;
 }
 
 h4 {
-  @apply text-2xl leading-relaxed pt-4;
+  @apply text-xl leading-relaxed pt-3;
 }
 
 h5 {
-  @apply text-xl leading-relaxed pt-3;
+  @apply text-lg leading-relaxed pt-2;
 }
 
 strong,
@@ -262,7 +279,7 @@ blockquote {
   @apply alert px-6;
 }
 
-pre > code {
+pre>code {
   all: unset;
 }
 
@@ -301,7 +318,7 @@ thead th {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 0rem 1rem;
   background-color: oklch(var(--nc));
 }
 
@@ -332,6 +349,11 @@ thead th {
     Courier New,
     monospace;
   user-select: none;
+}
+
+.code-container {
+  display: flex;
+  align-items: center;
 }
 
 .menu-item summary::after {
@@ -396,17 +418,18 @@ thead th {
 
 .copy-btn {
   position: relative;
-  top: 0;
-  right: 0;
-  z-index: 10;
+  top: 0; // 上下位置
+  right: 0; // 左右位置
+  z-index: 10; // 元素层级
+  padding: 0 0.3rem 0 0.3rem; // padding: top 0, right 0.3rem, bottom 0, left 0.3rem
 }
 
 .btn-category {
-  @apply bg-primary/10 hover:bg-primary text-primary hover:text-primary-content border-none hover:scale-110 transition-all duration-300;
+  @apply bg-primary/10 hover:bg-primary text-primary hover:text-primary-content border-none hover:scale-105 transition-all duration-300;
 }
 
 .btn-tag {
-  @apply bg-secondary/10 hover:bg-secondary text-secondary hover:text-secondary-content border-none hover:scale-110 transition-all duration-300;
+  @apply bg-secondary/10 hover:bg-secondary text-secondary hover:text-secondary-content border-none hover:scale-105 transition-all duration-300;
 }
 
 .timeline {
