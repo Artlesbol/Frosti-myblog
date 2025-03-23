@@ -5,7 +5,7 @@ import 'dayjs/locale/zh-cn';
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 // Site title and description
-export const SITE_LANG = "zh-cn";
+export const SITE_LANG = "zh";
 export const SITE_TAB = "Artlesbol.top";
 export const SITE_TITLE = "Artlesbol.top";
 export const SITE_DESCRIPTION = "Artlesbol的个人博客，主要发布技术文章和人生思考，有时候也会分享一些奇怪的东西。";
@@ -14,7 +14,7 @@ export const DATE_FORMAT = "YYYY年MM月DD日 ddd";
 
 // User profile information
 export const USER_NAME = "Artlesbol";
-export const USER_SITE = "https://blog.artlesbol.top"; // At the same time, this is also the site retrieved by the i18n configuration.
+export const USER_SITE = "https://blog.artlesbol.top/";
 export const USER_AVATAR = "/profile.jpg";
 
 // Server and transition settings
