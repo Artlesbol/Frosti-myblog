@@ -1,11 +1,12 @@
 ---
 import { menuItems } from "../consts.ts";
 import { Icon } from "astro-icon/components";
+import type { MenuItem } from "../types";
 ---
 
 <ul class="menu menu-sm dropdown-content bg-base-100 rounded-br-box w-60 p-2 shadow-lg" id="header-menu">
   {
-    menuItems.map((item) => (
+    menuItems.map((item: MenuItem) => (
       <li class="w-full relative">
         {item.subItems ? (
           <details class="menu-item">

@@ -62,6 +62,7 @@ export interface MenuItem {
   href?: string;
   target?: string;
   subItems?: MenuItem[];
+  showOnSmallScreenOnly?: boolean;
 }
 
 export interface SocialIcon {
